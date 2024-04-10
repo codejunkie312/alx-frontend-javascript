@@ -13,4 +13,3 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * Object creation and their properties in ES6
 * Iterators and for-of loops
 
-## 0. Const or let?
