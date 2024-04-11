@@ -6,10 +6,13 @@ const handleProfileSignup = async (firstName, lastName, fileName) => {
     signUpUser(firstName, lastName),
     uploadPhoto(fileName),
   ]);
-  return results.map((result) => ({
-    status: result.status,
-    value: result.reason || result.value,
-  }));
+  return results.map((result) => {
+    if (result.status === 'rejected') {
+      const errorTitle = result.reason.message;
+      return { status: 'rejected', value: `Error: ${errorTitle}` };
+    }
+    return { status: 'fulfilled', value: result.value };
+  });
 };
 
 export default handleProfileSignup;
