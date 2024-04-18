@@ -15,4 +15,5 @@ namespace Subjects {
       return "No available teacher";
     }
   }
+  export const java = new Java();
 }
